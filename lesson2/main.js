@@ -92,7 +92,7 @@ let coefficient;
 let priсe;
 
 if (weight > 0) {
-  if (type === "Стандарт" || weight === "Экспресс" || weight === "Премиум") {
+  if (type === "Стандарт" || type === "Экспресс" || type === "Премиум") {
     baseCost = weight < 1 ? 5 : weight <= 5 ? 10 : 15;
 
     switch (type) {
