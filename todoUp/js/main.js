@@ -45,26 +45,55 @@ const deleteTodoById = (todos, todoId) => {
 };
 
 // При помощи метода querySelector получаем элементы .form, .input и .todos
-const form = document.querySelector(".form");
-const input = document.querySelector(".input");
-const todoList = document.querySelector(".todos");
+const formElement = document.querySelector(".form");
+const inputElement = document.querySelector(".input");
+const todosElement = document.querySelector(".todos");
 // Создаем функцию createTodoElement(text), которая будет создавать todo в виде разметки
-function createTodoElement(text) {
-  const newTodo = document.createElement("li");
-  newTodo.classList.add("todo");
-  newTodo.innerHTML = `
-    <div class="todo-text">${text}</div>
-          <div class="todo-actions">
-            <button class="button-complete button">&#10004;</button>
-            <button class="button-delete button">&#10006;</button>
-          </div>`;
+function createTodoElement(todo) {
+  const newTodoElement = document.createElement("li");
+  newTodoElement.classList.add("todo");
+  newTodoElement.id = todo[todoKeys.id];
+  newTodoElement.innerHTML = `
+  <div class="todo-text">${todo[todoKeys.text]}</div>
+  <div class="todo-actions">
+    <button class="button-complete button">&#10004;</button>
+    <button class="button-delete button">&#10006;</button>
+  </div>`;
 
-  return newTodo;
+  return newTodoElement;
 }
 // Создаем функцию handleCreateTodo(todos, text), которая будет вызывать createTodo и createTodoElement
 function handleCreateTodo(todos, text) {
-  createTodo(todos, text);
-  const newElement = createTodoElement(text);
+  const newTodo = createTodo(todos, text);
+  const newElement = createTodoElement(newTodo);
 
-  todoList.append(newElement);
+  todosElement.append(newElement);
 }
+
+formElement.addEventListener("submit", event => {
+  event.preventDefault();
+
+  const text = inputElement.value.trim();
+  if (!text) return;
+
+  handleCreateTodo(todos, text);
+
+  inputElement.value = "";
+});
+
+todosElement.addEventListener("click", ({ target }) => {
+  const todo = target.closest(".todo");
+  if (!todo) return;
+
+  const id = Number(todo.id);
+
+  if (target.matches(".button-complete")) {
+    completeTodoById(todos, id);
+    todo.classList.toggle("completed");
+  }
+
+  if (target.matches(".button-delete")) {
+    deleteTodoById(todos, id);
+    todo.remove();
+  }
+});
