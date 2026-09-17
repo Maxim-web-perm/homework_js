@@ -1,0 +1,30 @@
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* min-width: 1685px max-width: 1980px */
+  gap: clamp(15px, -4.417rem + 5.08vw, 30px);
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.menu__link {
+  font-family: var(--second-family);
+  font-size: 20px;
+
+  -webkit-transition: var(--transition-time);
+
+  transition: var(--transition-time);
+}
+
+@media (width<=1980px) {
+  .menu__link {
+    font-size: 18px;
+  }
+}
+
+@media (any-hover: hover) {
+  .menu__link:hover {
+    color: var(--accent-color);
+  }
+}

@@ -1,0 +1,56 @@
+:root {
+  /* Font-famaly*/
+  --font-family: "Open Sans", sans-serif;
+  --second-family: "NAMU Pro", sans-serif;
+
+  /* colors */
+
+  --color-text-main: #111111;
+  --color-text-description: #000000;
+
+  --accent-color: #c5358c;
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8f8f8;
+  --color-bg-dark: #111111;
+
+  --color-status-success: #68ae5c;
+  --color-status-error: #dc5b5b;
+  --color-old-price: #ababab;
+
+  /* shadows */
+  --header-shadow: 0 4px 41px 0 var(--color-bg-dark);
+  --accent-shadow: 0 4px 41px 0 var(--accent-color);
+  --card-shadow:
+    0 4px 41px 0 rgba(0, 0, 0, 0.05), 0 4px 41px 0 rgba(0, 0, 0, 0.05);
+  --list-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+
+  /* container */
+  --container-wight: 1360px;
+
+  /* min-width: 768px max-width: 1920px  */
+  --container-padding: clamp(71px, -4.271rem + 18.14vw, 280px);
+
+  /* transitions */
+  --transition-time: 0.3s;
+
+  /* layers */
+  --layer-negative: -1;
+  --layer-0: 0;
+  --layer-1: 10;
+  --layer-2: 20;
+  --layer-3: 30;
+
+  /* header height */
+}
+
+@media (max-width: 767px) {
+  :root {
+    /* min-width: 390px max-width: 768px  */
+    --container-padding: clamp(20px, -1.974rem + 13.23vw, 70px);
+  }
+}
+
+/* shadows 
+  --shadow-glow: 0 0 6px 2px var(--main-glow-color);
+  --shadow-accent-glow: 0 0 6px 2px var(--accent-glow-color);
+  --shadow-disable-glow: 0 0 6px 2px var(--disable-glow-color); */
