@@ -1,0 +1,150 @@
+.hero {
+  position: relative;
+  background-color: #ddd;
+  overflow: hidden;
+}
+
+.hero__container {
+  position: relative;
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+
+  /* min-width: 768px max-width: 1980px */
+  height: clamp(389px, 6.055rem + 38.04vw, 850px);
+}
+
+.hero__wrapper-text {
+  position: relative;
+  z-index: var(--layer-2);
+  /* min-width: 768px max-width: 1980px */
+  margin-top: clamp(80px, -1.733rem + 14.03vw, 250px);
+  width: clamp(363px, 15.044rem + 15.92vw, 556px);
+}
+
+@media (width<=768px) {
+  .hero__wrapper-text {
+    /* min-width: 390px max-width: 768px */
+    margin-top: clamp(50px, 1.19rem + 7.94vw, 80px);
+    width: clamp(290px, 13.418rem + 19.31vw, 363px);
+  }
+}
+
+/* ЗАГОЛОВОК */
+
+.hero__title {
+  /* min-width: 768px max-width: 1980px */
+  margin-bottom: clamp(20px, 0.458rem + 1.65vw, 40px);
+}
+
+@media (width<=576px) {
+  .hero__title {
+    margin-bottom: 18px;
+  }
+}
+
+@media (width<=390px) {
+  .hero__title {
+    margin-bottom: 16px;
+  }
+}
+
+/* ОПИСАНИЕ */
+
+.hero__description {
+  /* min-width: 768px max-width: 1980px */
+  margin-bottom: clamp(40px, 0.52rem + 4.13vw, 90px);
+  width: clamp(235px, 3.892rem + 24.83vw, 554px);
+  font-size: clamp(12px, 0.196rem + 1.16vw, 26px);
+  line-height: 130%;
+}
+
+@media (width<=576px) {
+  .hero__description {
+    margin-bottom: 35px;
+    width: 210px;
+  }
+}
+
+@media (width<=390px) {
+  .hero__description {
+    margin-bottom: 30px;
+    width: 170px;
+    line-height: 140%;
+  }
+}
+
+/* КНОПКА */
+
+.hero__link {
+  width: 235px;
+  height: 64px;
+}
+
+@media (width<=1420px) {
+  .hero__link {
+    width: 180px;
+    height: 45px;
+
+    font-size: 20px;
+  }
+}
+
+@media (width<=992px) {
+  .hero__link {
+    width: 141px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+
+@media (width<=992px) {
+  .hero__link {
+    width: 141px;
+    height: 36px;
+  }
+}
+
+/* ИЗОБРАЖЕНИЕ */
+
+.hero__picture {
+  position: absolute;
+  bottom: 0;
+  right: -28px;
+  z-index: var(--layer-1);
+  /* min-width: 768px max-width: 1980px  */
+  width: clamp(374px, 8.682rem + 30.61vw, 745px);
+  height: clamp(389px, 6.055rem + 38.04vw, 850px);
+}
+
+@media (width<=768px) {
+  .hero__picture {
+    right: -70px;
+    /* min-width: 576px max-width: 768px  */
+    width: clamp(280px, -0.125rem + 48.96vw, 374px);
+    height: clamp(274px, -4.438rem + 59.9vw, 389px);
+  }
+}
+
+@media (width<=576px) {
+  .hero__picture {
+    right: -20px;
+  }
+}
+
+.hero__image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}

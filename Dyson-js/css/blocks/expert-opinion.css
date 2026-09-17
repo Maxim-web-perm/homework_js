@@ -1,0 +1,88 @@
+.expert-opinion {
+  overflow: hidden;
+
+  background-color: var(--color-bg-secondary);
+}
+
+.expert-opinion__container {
+  position: relative;
+}
+
+.expert-opinion__content {
+  position: relative;
+  z-index: 1;
+
+  max-width: 760px;
+
+  /* min-width: 768px max-width: 1920px */
+  padding-top: clamp(60px, -6.25rem + 20.83vw, 150px);
+  padding-bottom: clamp(70px, -5.208rem + 12.78vw, 162px);
+}
+
+@media (width<=768px) {
+  .expert-opinion__content {
+    /* min-width: 390px max-width: 768px */
+    padding-bottom: clamp(46px, 2.153rem + 2.96vw, 70px);
+    padding-top: clamp(46px, 1.972rem + 3.7vw, 60px);
+  }
+}
+
+/* ЗАГОЛОВОК */
+.expert-opinion__title {
+  margin-bottom: 40px;
+}
+
+@media (width<=992px) {
+  .expert-opinion__title {
+    margin-bottom: 30px;
+    font-size: 34px;
+  }
+}
+
+@media (width<=768px) {
+  .expert-opinion__title {
+    margin-bottom: 20px;
+    font-size: 26px;
+  }
+}
+
+@media (width<=576px) {
+  .expert-opinion__title {
+    font-size: 20px;
+  }
+}
+
+.expert-opinion__text {
+  max-width: 670px;
+  margin: 0;
+
+  /* min-width: 768px max-width: 1920px */
+  font-size: clamp(12px, 0.5rem + 0.52vw, 18px);
+  line-height: 140%;
+}
+
+.expert-opinion__content p + p {
+  margin-top: 16px;
+}
+
+@media (width<=992px) {
+  .expert-opinion__content p + p {
+    margin-top: 12px;
+  }
+}
+
+.expert-opinion__image {
+  position: absolute;
+  right: clamp(-136px, -19.542rem + 14.72vw, -30px);
+  bottom: 0;
+
+  display: block;
+  width: clamp(375px, -10.417rem + 45.14vw, 700px);
+  height: auto;
+}
+
+@media (width<=1200px) {
+  .expert-opinion__image {
+    display: none;
+  }
+}
